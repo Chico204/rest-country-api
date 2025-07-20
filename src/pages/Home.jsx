@@ -13,8 +13,8 @@ const Home = ({ countries }) => {
   });
 
   return (
-    <div className="p-6">
-      <div className="flex flex-col md:flex-row md:justify-between mb-6 gap-4">
+    <div className="p-6 ">
+      <div className="flex flex-col md:flex-row md:justify-between mb-6 gap-4 ">
         <input
           type="text"
           placeholder="Search for a country..."
@@ -38,23 +38,24 @@ const Home = ({ countries }) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {filtered.map(country => (
-          <Link
-            key={country.alpha3Code}
-            to={`/country/${country.alpha3Code}`}
-            className="bg-white dark:bg-gray-800 rounded shadow hover:shadow-md transition"
-          >
-            <img
-              src={country.flags?.svg}
-              alt={country.name}
-              className="w-full h-40 object-cover rounded-t"
-            />
-            <div className="p-4">
-              <h2 className="text-lg font-bold mb-2">{country.name}</h2>
-              <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
-              <p><strong>Region:</strong> {country.region}</p>
-              <p><strong>Capital:</strong> {country.capital}</p>
-            </div>
-          </Link>
+        <Link
+  key={country.alpha3Code || country.cca3 || country.name}
+  to={`/country/${country.alpha3Code || country.cca3}`}
+  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow hover:shadow-lg transition overflow-hidden"
+>
+  <img
+    src={country.flags?.svg || country.flag}
+    alt={country.name}
+    className="w-full h-40 object-cover"
+  />
+  <div className="p-4">
+    <h2 className="font-bold text-lg mb-2">{country.name}</h2>
+    <p><strong>Population:</strong> {country.population?.toLocaleString()}</p>
+    <p><strong>Region:</strong> {country.region}</p>
+    <p><strong>Capital:</strong> {country.capital}</p>
+  </div>
+</Link>
+
         ))}
       </div>
     </div>
