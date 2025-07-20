@@ -1,2 +1,30 @@
 @import "tailwindcss";
 
+
+
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode (default) */
+body {
+  background-color: #f3f4f6; /* gray-100 */
+  color: #111827; /* gray-900 */
+}
+
+/* Dark mode */
+html.dark body {
+  background-color: #111827; /* gray-900 */
+  color: #f9fafb; /* gray-100 */
+}
+
+/* Example overrides for navbar or cards */
+html.dark .card {
+  background-color: #1f2937; /* gray-800 */
+  color: #f9fafb;
+}
+
+html.dark .header {
+  background-color: #1f2937;
+  color: #f9fafb;
+}

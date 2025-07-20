@@ -1,34 +1,38 @@
-import { useState, useEffect } from 'react';
+// App.jsx
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home.jsx';
-import CountryPage from './pages/CountryPage.jsx';
-import Header from './components/Header.jsx';
-import countriesData from './data/countries.json';
+import Home from './pages/Home';
+import CountryPage from './pages/CountryPage';
+import countries from './data/countries.json';
+import DarkModeToggle from './components/DarkModeToggle';
+import { useEffect, useState } from 'react';
 
-function App() {
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
+const App = () => {
+  const [dark, setDark] = useState(() => localStorage.getItem('theme') === 'dark');
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
+    const html = document.documentElement;
+    if (dark) {
+      html.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
-      root.classList.remove('dark');
+      html.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
-  }, [darkMode]);
+  }, [dark]);
 
   return (
-    <div className="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen">
-      <Header toggleDarkMode={() => setDarkMode(!darkMode)} darkMode={darkMode} />
-      <Routes>
-        <Route path="/" element={<Home countries={countriesData} />} />
-   <Route path="/country/:code" element={<CountryPage countries={countriesData} />} />
+    <div>
+      <header className="p-6 shadow header flex justify-between items-center">
+        <h1 className="text-2xl font-bold">🌍 Country Info</h1>
+        <DarkModeToggle dark={dark} setDark={setDark} />
+      </header>
 
+      <Routes>
+        <Route path="/" element={<Home countries={countries} />} />
+        <Route path="/country/:code" element={<CountryPage countries={countries} />} />
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
