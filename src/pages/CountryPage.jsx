@@ -57,7 +57,7 @@ const CountryPage = ({ countries }) => {
                   <Link
                     key={border.alpha3Code}
                     to={`/country/${border.alpha3Code}`}
-                    className="px-4 py-2  dark:bg-gray-700 rounded shadow-md text-sm hover:shadow-md "
+                    className="px-4 py-2   rounded shadow-md text-sm hover:shadow-md "
                   >
                     {border.name}
                   </Link>

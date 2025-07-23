@@ -21,7 +21,7 @@ const Home = ({ countries }) => {
           placeholder= "Search for country..." 
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="w-full md:w-1/2 p-2 shadow-lg rounded dark:text-white"
+          className="w-full md:w-1/2 p-2 shadow-lg rounded "
         />
         <select
           value={region}
