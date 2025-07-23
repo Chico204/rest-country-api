@@ -41,7 +41,7 @@ const Home = ({ countries }) => {
         <Link
   key={country.alpha3Code || country.cca3 || country.name}
   to={`/country/${country.alpha3Code || country.cca3}`}
-  className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow hover:shadow-lg transition overflow-hidden"
+  className=" rounded shadow hover:shadow-lg transition overflow-hidden"
 >
   <img
     src={country.flags?.svg || country.flag}
