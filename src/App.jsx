@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div>
       <header className="p-6 shadow header flex justify-between items-center">
-        <h1 className="text-2xl font-bold">🌍 Country Info</h1>
+        <h1 className="text-2xl font-bold"> Where in the world?</h1>
         <DarkModeToggle dark={dark} setDark={setDark} />
       </header>
 
