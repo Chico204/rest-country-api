@@ -1,10 +1,12 @@
+import { MdOutlineDarkMode,  MdOutlineLightMode } from "react-icons/md";
+
 const DarkModeToggle = ({ dark, setDark }) => {
   return (
     <button
       onClick={() => setDark(!dark)}
-      className="px-4 py-2 bg-gray-200 rounded shadow hover:shadow-md"
+      className="px-4 py-2  rounded shadow hover:shadow-lg"
     >
-      {dark ? '🌞 Light Mode' : '🌙 Dark Mode'}
+      {dark ? <MdOutlineDarkMode/> :<  MdOutlineLightMode/> }
     </button>
   );
 };
