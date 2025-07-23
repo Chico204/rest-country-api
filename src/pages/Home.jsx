@@ -1,6 +1,7 @@
 // pages/Home.jsx
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaSearch } from "react-icons/fa";
 
 const Home = ({ countries }) => {
   const [search, setSearch] = useState('');
@@ -17,15 +18,15 @@ const Home = ({ countries }) => {
       <div className="flex flex-col md:flex-row md:justify-between mb-6 gap-4 ">
         <input
           type="text"
-          placeholder="Search for a country..."
+          placeholder= "Search for country..." 
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="w-full md:w-1/2 p-2 border rounded dark:bg-gray-700 dark:text-white"
+          className="w-full md:w-1/2 p-2 shadow-md rounded dark:bg-gray-700 dark:text-white"
         />
         <select
           value={region}
           onChange={e => setRegion(e.target.value)}
-          className="w-full md:w-1/4 p-2 border rounded dark:bg-gray-700 dark:text-white"
+          className="w-1/2 md:w-1/6 p-2 shadow-md rounded dark:bg-gray-700 dark:text-white"
         >
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>

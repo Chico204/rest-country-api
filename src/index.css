@@ -16,17 +16,23 @@ body {
 
 /* Dark mode */
 html.dark body {
-  background-color: #111827; /* gray-900 */
+  background-color:  hsl(207, 26%, 17%); /* gray-900 */
   color: #f9fafb; /* gray-100 */
 }
 
 /* Example overrides for navbar or cards */
 html.dark .card {
-  background-color: #1f2937; /* gray-800 */
+  background-color:hsl(209, 23%, 22%); /* gray-800 */
   color: #f9fafb;
 }
 
 html.dark .header {
-  background-color: #1f2937;
+  background-color:hsl(209, 23%, 22%);
   color: #f9fafb;
 }
+/*  Blue 900 (Dark Mode Elements): hsl(209, 23%, 22%)
+- Blue 950 (Dark Mode Background): hsl(207, 26%, 17%)
+- Grey 950 (Light Mode Text): hsl(200, 15%, 8%)
+- Grey 400 (Light Mode Input): hsl(0, 0%, 50%)
+- Grey 50 (Light Mode Background): hsl(0, 0%, 99%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 100%, 100%) */
