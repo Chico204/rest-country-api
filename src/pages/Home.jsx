@@ -21,12 +21,12 @@ const Home = ({ countries }) => {
           placeholder= "Search for country..." 
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="w-full md:w-1/2 p-2 shadow-md rounded dark:bg-gray-700 dark:text-white"
+          className="w-full md:w-1/2 p-2 shadow-md rounded dark:text-white"
         />
         <select
           value={region}
           onChange={e => setRegion(e.target.value)}
-          className="w-1/2 md:w-1/6 p-2 shadow-md rounded dark:bg-gray-700 dark:text-white"
+          className="w-1/2 md:w-1/6 p-2 shadow-md rounded dark:text-white"
         >
           <option value="">Filter by Region</option>
           <option value="Africa">Africa</option>
