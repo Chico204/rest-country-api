@@ -1,5 +1,6 @@
 // pages/CountryPage.jsx
 import { useParams, Link } from 'react-router-dom';
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const CountryPage = ({ countries }) => {
   const { code } = useParams();
@@ -20,9 +21,10 @@ const CountryPage = ({ countries }) => {
     <div className="p-6">
       <Link
         to="/"
-        className="inline-block mb-6 px-4 py-2 bg-white dark:bg-gray-700 rounded shadow hover:shadow-md"
+        className="inline-block mb-6 px-4 py-2  rounded shadow hover:shadow-md"
       >
-        ⬅ Back
+        <span className='flex justify-between gap-3 align-center'><FaLongArrowAltLeft /> Back</span>
+      
       </Link>
       <div className="grid md:grid-cols-2 gap-12">
         <img
@@ -55,7 +57,7 @@ const CountryPage = ({ countries }) => {
                   <Link
                     key={border.alpha3Code}
                     to={`/country/${border.alpha3Code}`}
-                    className="px-3 py-1 bg-white dark:bg-gray-700 rounded shadow text-sm hover:shadow-md"
+                    className="px-4 py-2  dark:bg-gray-700 rounded shadow-md text-sm hover:shadow-md "
                   >
                     {border.name}
                   </Link>
