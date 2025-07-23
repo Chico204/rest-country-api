@@ -26,7 +26,7 @@ const CountryPage = ({ countries }) => {
         <span className='flex justify-between gap-3 align-center'><FaLongArrowAltLeft /> Back</span>
       
       </Link>
-      <div className="grid md:grid-cols-2 gap-12">
+      <div className="grid md:grid-cols-2 gap-12 ">
         <img
           src={country.flags.svg}
           alt={country.name}
